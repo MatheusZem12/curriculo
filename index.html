@@ -175,12 +175,6 @@
     color: var(--muted); padding: 2px 10px; border-radius: 999px;
     font-size: 11.5px; font-weight: 600;
   }
-  .repo-link {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: 13px; font-weight: 600; margin-top: 12px;
-  }
-  .repo-link svg { width: 14px; height: 14px; }
-
   .featured { padding: 0; overflow: hidden; }
   .featured .shots { display: grid; grid-template-columns: 1fr 1fr; background: var(--shot-bg); }
   @media (max-width: 700px) { .featured .shots { grid-template-columns: 1fr; } }
@@ -249,7 +243,6 @@
       <a class="item" href="https://wa.me/5519999851929"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+55 (19) 99985-1929</a>
       <a class="item" href="mailto:matheuslajazem@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>matheuslajazem@gmail.com</a>
       <a class="item" href="https://linkedin.com/in/matheus-lajarin-zem-17b39b289"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A5.98 5.98 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
-      <a class="item" href="https://github.com/MatheusZem12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>GitHub</a>
     </div>
     <div class="pdf-row">
       <span data-lang="pt">
@@ -376,7 +369,6 @@
           <div class="sub">Rastreio de tempo com classificação por IA (Linux)</div>
           <p>Programa que registra em que o usuário gasta o tempo no computador e classifica as atividades automaticamente com IA.</p>
           <p>Desenhado com <strong>privacidade em primeiro lugar:</strong> a análise acontece na máquina do próprio usuário e o servidor nunca vê o conteúdo das janelas.</p>
-          <a class="repo-link" href="https://github.com/MatheusZem12/activity-manager"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Ver no GitHub</a>
           <div class="proj-tags"><span>Linux</span><span>IA local</span><span>Privacidade por design</span></div>
         </div>
         <div class="card">
@@ -384,7 +376,6 @@
           <div class="sub">Leitor de e-mails local para desktop (Gmail e Outlook)</div>
           <p>Cliente de e-mail em <strong>Electron + Node.js</strong>, sem backend remoto: a conexão com Gmail e Outlook acontece direto na máquina do usuário via OAuth, e credenciais, tokens e cache ficam salvos localmente e criptografados.</p>
           <p>Caixa de entrada unificada de várias contas, painel de leitura, busca, seleção múltipla e um automatizador de regras para limpeza de e-mails em massa.</p>
-          <a class="repo-link" href="https://github.com/MatheusZem12/mail-reader"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Ver no GitHub</a>
           <div class="proj-tags"><span>Electron</span><span>Node.js</span><span>OAuth (Google/Microsoft)</span><span>Criptografia local</span></div>
         </div>
         <div class="card">
@@ -392,7 +383,6 @@
           <div class="sub">Gerenciador visual de repositórios Git</div>
           <p>App desktop em <strong>Electron + Node.js</strong> para organizar dezenas de repositórios em grupos e subgrupos com arrastar-e-soltar, mostrando status, busca e estatísticas de cada um.</p>
           <p>Por projeto: commit com stage/unstage e diff colorido, histórico em gráfico de branches, tags, stash e sincronização — tudo conversando com o Git do sistema.</p>
-          <a class="repo-link" href="https://github.com/MatheusZem12/git-manager"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Ver no GitHub</a>
           <div class="proj-tags"><span>Electron</span><span>Node.js</span><span>IPC</span><span>Git</span></div>
         </div>
         <div class="card">
@@ -400,7 +390,6 @@
           <div class="sub">Extensão publicada na loja oficial do VS Code</div>
           <p>Fundos animados para o painel do VS Code — neve, chuva com relâmpagos e brasas — com controle de opacidade e velocidade, sem pesar no editor.</p>
           <p>Com um efeito ativo, a extensão tinge a interface em tons discretos combinando com o tema, usando a API oficial de cores do VS Code e restaurando os valores originais ao remover.</p>
-          <a class="repo-link" href="https://github.com/MatheusZem12/terminal-animado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Ver no GitHub</a>
           <div class="proj-tags"><span>Extensão VS Code</span><span>JavaScript</span><span>Canvas / animação</span></div>
         </div>
       </div>
@@ -539,7 +528,6 @@
           <div class="sub">Time tracking with AI classification (Linux)</div>
           <p>A program that records how the user spends time on the computer and classifies activities automatically with AI.</p>
           <p>Designed <strong>privacy-first:</strong> the analysis happens on the user's own machine and the server never sees window contents.</p>
-          <a class="repo-link" href="https://github.com/MatheusZem12/activity-manager"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>View on GitHub</a>
           <div class="proj-tags"><span>Linux</span><span>Local AI</span><span>Privacy by design</span></div>
         </div>
         <div class="card">
@@ -547,7 +535,6 @@
           <div class="sub">Local desktop e-mail reader (Gmail and Outlook)</div>
           <p>An e-mail client built with <strong>Electron + Node.js</strong>, with no remote backend: the connection to Gmail and Outlook happens directly on the user's machine via OAuth, and credentials, tokens and cache are stored locally and encrypted.</p>
           <p>A unified inbox for multiple accounts, reading pane, search, multi-select and a rule automator for bulk e-mail cleanup.</p>
-          <a class="repo-link" href="https://github.com/MatheusZem12/mail-reader"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>View on GitHub</a>
           <div class="proj-tags"><span>Electron</span><span>Node.js</span><span>OAuth (Google/Microsoft)</span><span>Local encryption</span></div>
         </div>
         <div class="card">
@@ -555,7 +542,6 @@
           <div class="sub">Visual Git repository manager</div>
           <p>A desktop app built with <strong>Electron + Node.js</strong> to organize dozens of repositories into groups and subgroups with drag-and-drop, showing status, search and statistics for each one.</p>
           <p>Per project: commits with stage/unstage and colored diff, branch-graph history, tags, stash and sync — all talking to the system's own Git.</p>
-          <a class="repo-link" href="https://github.com/MatheusZem12/git-manager"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>View on GitHub</a>
           <div class="proj-tags"><span>Electron</span><span>Node.js</span><span>IPC</span><span>Git</span></div>
         </div>
         <div class="card">
@@ -563,7 +549,6 @@
           <div class="sub">Extension published on the official VS Code marketplace</div>
           <p>Animated backgrounds for the VS Code panel — snow, rain with lightning, and embers — with opacity and speed controls, without weighing down the editor.</p>
           <p>With an effect active, the extension tints the interface in subtle matching tones using VS Code's official color API, restoring the original values on removal.</p>
-          <a class="repo-link" href="https://github.com/MatheusZem12/terminal-animado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>View on GitHub</a>
           <div class="proj-tags"><span>VS Code extension</span><span>JavaScript</span><span>Canvas / animation</span></div>
         </div>
       </div>
@@ -702,7 +687,6 @@
           <div class="sub">Registro de tiempo con clasificación por IA (Linux)</div>
           <p>Programa que registra en qué gasta el tiempo el usuario en la computadora y clasifica las actividades automáticamente con IA.</p>
           <p>Diseñado con <strong>privacidad primero:</strong> el análisis ocurre en la máquina del propio usuario y el servidor nunca ve el contenido de las ventanas.</p>
-          <a class="repo-link" href="https://github.com/MatheusZem12/activity-manager"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Ver en GitHub</a>
           <div class="proj-tags"><span>Linux</span><span>IA local</span><span>Privacidad por diseño</span></div>
         </div>
         <div class="card">
@@ -710,7 +694,6 @@
           <div class="sub">Lector de correo local para desktop (Gmail y Outlook)</div>
           <p>Cliente de correo en <strong>Electron + Node.js</strong>, sin backend remoto: la conexión con Gmail y Outlook ocurre directo en la máquina del usuario vía OAuth, y credenciales, tokens y caché quedan guardados localmente y cifrados.</p>
           <p>Bandeja unificada de varias cuentas, panel de lectura, búsqueda, selección múltiple y un automatizador de reglas para limpieza masiva de correos.</p>
-          <a class="repo-link" href="https://github.com/MatheusZem12/mail-reader"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Ver en GitHub</a>
           <div class="proj-tags"><span>Electron</span><span>Node.js</span><span>OAuth (Google/Microsoft)</span><span>Cifrado local</span></div>
         </div>
         <div class="card">
@@ -718,7 +701,6 @@
           <div class="sub">Gestor visual de repositorios Git</div>
           <p>App de escritorio en <strong>Electron + Node.js</strong> para organizar decenas de repositorios en grupos y subgrupos con arrastrar y soltar, mostrando estado, búsqueda y estadísticas de cada uno.</p>
           <p>Por proyecto: commits con stage/unstage y diff coloreado, historial en gráfico de ramas, tags, stash y sincronización — todo conversando con el Git del sistema.</p>
-          <a class="repo-link" href="https://github.com/MatheusZem12/git-manager"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Ver en GitHub</a>
           <div class="proj-tags"><span>Electron</span><span>Node.js</span><span>IPC</span><span>Git</span></div>
         </div>
         <div class="card">
@@ -726,7 +708,6 @@
           <div class="sub">Extensión publicada en la tienda oficial de VS Code</div>
           <p>Fondos animados para el panel de VS Code — nieve, lluvia con relámpagos y brasas — con control de opacidad y velocidad, sin sobrecargar el editor.</p>
           <p>Con un efecto activo, la extensión tiñe la interfaz en tonos discretos combinando con el tema, usando la API oficial de colores de VS Code y restaurando los valores originales al quitar.</p>
-          <a class="repo-link" href="https://github.com/MatheusZem12/terminal-animado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Ver en GitHub</a>
           <div class="proj-tags"><span>Extensión VS Code</span><span>JavaScript</span><span>Canvas / animación</span></div>
         </div>
       </div>
@@ -777,7 +758,6 @@
 
   <footer>
     <span>© 2026 Matheus Lajarin Zem</span>
-    <span><a href="https://github.com/MatheusZem12/curriculo">github.com/MatheusZem12/curriculo</a></span>
   </footer>
 </div>
 
