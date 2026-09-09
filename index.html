@@ -13,7 +13,7 @@
     --bg: #f6f7f9;
     --surface: #ffffff;
     --text: #1a2230;
-    --muted: #5b6575;
+    --muted: #4b5565;
     --accent: #1663c7;
     --accent-soft: #e8f0fb;
     --border: #e3e7ee;
@@ -26,7 +26,7 @@
       --bg: #0e1116;
       --surface: #161b23;
       --text: #e6eaf1;
-      --muted: #98a2b3;
+      --muted: #a6b0c2;
       --accent: #6aa5ee;
       --accent-soft: #1b2a41;
       --border: #242b36;
@@ -41,7 +41,8 @@
     background: var(--bg);
     color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.65;
+    font-size: 16px;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
   .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px 80px; }
@@ -111,45 +112,62 @@
   @media (max-width: 700px) { .stats { grid-template-columns: repeat(2, 1fr); } }
   .stat {
     background: var(--surface); border: 1px solid var(--border);
-    border-radius: 12px; padding: 14px 16px; box-shadow: var(--shadow);
+    border-radius: 12px; padding: 16px 18px; box-shadow: var(--shadow);
   }
-  .stat .num { font-size: 22px; font-weight: 800; color: var(--accent); line-height: 1.2; }
-  .stat .lbl { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .stat .num { font-size: 27px; font-weight: 800; color: var(--accent); line-height: 1.2; }
+  .stat .lbl { font-size: 13px; color: var(--muted); margin-top: 4px; line-height: 1.45; }
 
-  section { margin-bottom: 44px; }
+  section { margin-bottom: 52px; }
   h2 {
-    font-size: 13px;
+    font-size: 14px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.8px;
+    font-weight: 700;
     color: var(--accent);
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     display: flex;
     align-items: center;
     gap: 12px;
   }
+  h2::before { content: ""; width: 22px; height: 3px; border-radius: 2px; background: var(--accent); }
   h2::after { content: ""; flex: 1; height: 1px; background: var(--border); }
-  section > p { color: var(--text); margin-bottom: 12px; max-width: 76ch; }
+  section > p {
+    color: var(--text);
+    margin-bottom: 14px;
+    font-size: 16px;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
 
   .card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 22px 24px;
-    margin-bottom: 14px;
+    padding: 24px 26px;
+    margin-bottom: 16px;
     box-shadow: var(--shadow);
   }
   .card:last-child { margin-bottom: 0; }
   .card-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px 16px; margin-bottom: 4px; }
-  .card-head h3 { font-size: 17px; }
-  .card-head .period { color: var(--muted); font-size: 13px; font-weight: 600; white-space: nowrap; }
-  .card .sub { color: var(--accent); font-size: 13.5px; font-weight: 600; margin-bottom: 10px; }
-  .card p { color: var(--muted); font-size: 14.5px; margin-bottom: 10px; }
+  .card-head h3 { font-size: 18px; }
+  .card-head .period { color: var(--muted); font-size: 13.5px; font-weight: 600; white-space: nowrap; }
+  .card .sub { color: var(--accent); font-size: 14px; font-weight: 600; margin-bottom: 12px; }
+  .card p {
+    color: var(--muted); font-size: 15px; margin-bottom: 12px;
+    text-align: justify; text-justify: inter-word; hyphens: auto; -webkit-hyphens: auto;
+  }
   .card p:last-child { margin-bottom: 0; }
   .card a { color: var(--accent); text-decoration: none; }
   .card a:hover { text-decoration: underline; }
-  .card ul { margin: 4px 0 10px 20px; color: var(--muted); font-size: 14.5px; }
-  .card ul li { margin-bottom: 7px; }
+  .card ul {
+    margin: 6px 0 12px 20px; color: var(--muted); font-size: 15px;
+    text-align: justify; text-justify: inter-word; hyphens: auto; -webkit-hyphens: auto;
+  }
+  .card ul li { margin-bottom: 9px; padding-left: 4px; }
   .card ul li::marker { color: var(--accent); }
+  .card strong { color: var(--text); }
 
   .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
   .proj-tags span {
@@ -272,18 +290,18 @@
   <main data-lang="pt">
     <section>
       <h2>Objetivo</h2>
-      <p>Atuar como desenvolvedor backend, a parte do sistema que processa os dados e as regras do negócio, com ênfase em bancos de dados e no desenho de soluções: entender o problema, projetar o sistema e acompanhá-lo até funcionar bem no dia a dia.</p>
+      <p>Atuar como <strong>desenvolvedor backend</strong> — a parte do sistema que processa os dados e as regras do negócio — com ênfase em <strong>bancos de dados</strong> e no <strong>desenho de soluções</strong>: entender o problema, projetar o sistema e acompanhá-lo até funcionar bem no dia a dia.</p>
     </section>
 
     <section>
       <h2>Perfil</h2>
-      <p>Sou comunicativo e colaborativo. Gosto de trazer minha visão ao problema, contribuir em conversas de brainstorming e discordar com respeito e bons argumentos quando vejo um caminho melhor. Penso fora da caixa e trato problemas como quebra-cabeças: prefiro verificar a supor, meço antes de mudar e investigo cada falha até encontrar a causa verdadeira, assumindo responsabilidade do início ao fim pelo que entrego.</p>
+      <p>Sou <strong>comunicativo e colaborativo</strong>. Gosto de trazer minha visão ao problema, contribuir em conversas de brainstorming e discordar com respeito e bons argumentos quando vejo um caminho melhor. Penso fora da caixa e trato problemas como quebra-cabeças: <strong>prefiro verificar a supor</strong>, meço antes de mudar e investigo cada falha até encontrar a causa verdadeira, <strong>assumindo responsabilidade do início ao fim</strong> pelo que entrego.</p>
     </section>
 
     <section>
       <h2>Resumo Profissional</h2>
-      <p>Desenvolvedor que atua em todas as etapas de um sistema: entender a necessidade, organizar os dados, construir a lógica, criar as telas e manter tudo funcionando depois de entregue. Minha principal característica é a flexibilidade tecnológica. Já entreguei sistemas em produção nas principais tecnologias do mercado, como Java, Angular e Python, e me adapto com rapidez a ferramentas novas, porque domino os fundamentos que todas elas têm em comum.</p>
-      <p>Na prática, sei estruturar sistemas grandes de forma organizada, fazer sistemas diferentes conversarem entre si (como integrar um produto novo a um ERP que a empresa já usa), proteger dados sensíveis e garantir qualidade com testes automatizados. Também crio e mantenho produtos próprios que estão no ar hoje, cuidando de todas as partes: servidor, publicação de novas versões e monitoramento.</p>
+      <p>Desenvolvedor que atua em todas as etapas de um sistema: entender a necessidade, organizar os dados, construir a lógica, criar as telas e manter tudo funcionando depois de entregue. Minha principal característica é a <strong>flexibilidade tecnológica</strong>: já entreguei sistemas em produção nas principais tecnologias do mercado, como <strong>Java, Angular e Python</strong>, e me adapto com rapidez a ferramentas novas, porque domino os fundamentos que todas elas têm em comum.</p>
+      <p>Na prática, sei estruturar sistemas grandes de forma organizada, fazer sistemas diferentes conversarem entre si (como <strong>integrar um produto novo a um ERP</strong> que a empresa já usa), proteger dados sensíveis e garantir qualidade com <strong>testes automatizados</strong>. Também crio e mantenho <strong>produtos próprios que estão no ar hoje</strong>, cuidando de todas as partes: servidor, publicação de novas versões e monitoramento.</p>
     </section>
 
     <section>
@@ -435,18 +453,18 @@
   <main data-lang="en">
     <section>
       <h2>Objective</h2>
-      <p>To work as a backend developer, the part of the system that handles data and business rules, with emphasis on databases and solution design: understanding the problem, designing the system and following it through until it runs well day to day.</p>
+      <p>To work as a <strong>backend developer</strong> — the part of the system that handles data and business rules — with emphasis on <strong>databases</strong> and <strong>solution design</strong>: understanding the problem, designing the system and following it through until it runs well day to day.</p>
     </section>
 
     <section>
       <h2>Profile</h2>
-      <p>I am communicative and collaborative. I like bringing my own perspective to a problem, contributing in brainstorming conversations and disagreeing with respect and good arguments when I see a better path. I think outside the box and treat problems as puzzles: I prefer verifying over assuming, measure before changing and investigate every failure until I find the true cause, taking ownership of what I deliver from start to finish.</p>
+      <p>I am <strong>communicative and collaborative</strong>. I like bringing my own perspective to a problem, contributing in brainstorming conversations and disagreeing with respect and good arguments when I see a better path. I think outside the box and treat problems as puzzles: <strong>I prefer verifying over assuming</strong>, measure before changing and investigate every failure until I find the true cause, <strong>taking ownership from start to finish</strong> of what I deliver.</p>
     </section>
 
     <section>
       <h2>Professional Summary</h2>
-      <p>A developer who works across every stage of a system: understanding the need, organizing the data, building the logic, creating the screens and keeping everything running after delivery. My defining trait is technological flexibility. I have shipped production systems in the market's main technologies, such as Java, Angular and Python, and I adapt quickly to new tools because I master the fundamentals they all share.</p>
-      <p>In practice, I know how to structure large systems in an organized way, make different systems talk to each other (such as integrating a new product with an ERP the company already uses), protect sensitive data and ensure quality with automated tests. I also build and maintain my own products, live today, taking care of every part: server, release of new versions and monitoring.</p>
+      <p>A developer who works across every stage of a system: understanding the need, organizing the data, building the logic, creating the screens and keeping everything running after delivery. My defining trait is <strong>technological flexibility</strong>: I have shipped production systems in the market's main technologies, such as <strong>Java, Angular and Python</strong>, and I adapt quickly to new tools because I master the fundamentals they all share.</p>
+      <p>In practice, I know how to structure large systems in an organized way, make different systems talk to each other (such as <strong>integrating a new product with an ERP</strong> the company already uses), protect sensitive data and ensure quality with <strong>automated tests</strong>. I also build and maintain <strong>my own products, live today</strong>, taking care of every part: server, release of new versions and monitoring.</p>
     </section>
 
     <section>
@@ -598,18 +616,18 @@
   <main data-lang="es">
     <section>
       <h2>Objetivo</h2>
-      <p>Trabajar como desarrollador backend, la parte del sistema que procesa los datos y las reglas del negocio, con énfasis en bases de datos y en el diseño de soluciones: entender el problema, proyectar el sistema y acompañarlo hasta que funcione bien en el día a día.</p>
+      <p>Trabajar como <strong>desarrollador backend</strong> — la parte del sistema que procesa los datos y las reglas del negocio — con énfasis en <strong>bases de datos</strong> y en el <strong>diseño de soluciones</strong>: entender el problema, proyectar el sistema y acompañarlo hasta que funcione bien en el día a día.</p>
     </section>
 
     <section>
       <h2>Perfil</h2>
-      <p>Soy comunicativo y colaborativo. Me gusta aportar mi visión al problema, contribuir en conversaciones de brainstorming y discrepar con respeto y buenos argumentos cuando veo un mejor camino. Pienso fuera de la caja y trato los problemas como rompecabezas: prefiero verificar antes que suponer, mido antes de cambiar e investigo cada falla hasta encontrar la causa verdadera, con responsabilidad de punta a punta.</p>
+      <p>Soy <strong>comunicativo y colaborativo</strong>. Me gusta aportar mi visión al problema, contribuir en conversaciones de brainstorming y discrepar con respeto y buenos argumentos cuando veo un mejor camino. Pienso fuera de la caja y trato los problemas como rompecabezas: <strong>prefiero verificar antes que suponer</strong>, mido antes de cambiar e investigo cada falla hasta encontrar la causa verdadera, <strong>con responsabilidad de punta a punta</strong>.</p>
     </section>
 
     <section>
       <h2>Resumen Profesional</h2>
-      <p>Desarrollador que actúa en todas las etapas de un sistema: entender la necesidad, organizar los datos, construir la lógica, crear las pantallas y mantener todo funcionando después de la entrega. Mi característica principal es la flexibilidad tecnológica. He entregado sistemas en producción en las principales tecnologías del mercado, como Java, Angular y Python, y me adapto con rapidez a herramientas nuevas porque domino los fundamentos comunes a todas.</p>
-      <p>En la práctica, sé estructurar sistemas grandes de forma organizada, hacer que sistemas distintos conversen entre sí (como integrar un producto nuevo a un ERP que la empresa ya usa), proteger datos sensibles y garantizar calidad con pruebas automatizadas. También creo y mantengo productos propios que están en el aire hoy, cuidando todas las partes: servidor, publicación de nuevas versiones y monitoreo.</p>
+      <p>Desarrollador que actúa en todas las etapas de un sistema: entender la necesidad, organizar los datos, construir la lógica, crear las pantallas y mantener todo funcionando después de la entrega. Mi característica principal es la <strong>flexibilidad tecnológica</strong>: he entregado sistemas en producción en las principales tecnologías del mercado, como <strong>Java, Angular y Python</strong>, y me adapto con rapidez a herramientas nuevas porque domino los fundamentos comunes a todas.</p>
+      <p>En la práctica, sé estructurar sistemas grandes de forma organizada, hacer que sistemas distintos conversen entre sí (como <strong>integrar un producto nuevo a un ERP</strong> que la empresa ya usa), proteger datos sensibles y garantizar calidad con <strong>pruebas automatizadas</strong>. También creo y mantengo <strong>productos propios que están en el aire hoy</strong>, cuidando todas las partes: servidor, publicación de nuevas versiones y monitoreo.</p>
     </section>
 
     <section>
