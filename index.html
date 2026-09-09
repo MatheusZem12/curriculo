@@ -7,6 +7,7 @@
 <meta name="description" content="Matheus Lajarin Zem — Desenvolvedor Full Stack Pleno · Java · Spring · Angular. Currículo e portfólio.">
 <meta property="og:title" content="Matheus Lajarin Zem · Desenvolvedor Full Stack">
 <meta property="og:description" content="Java · Spring · Angular · PostgreSQL. Currículo e portfólio de projetos.">
+<meta property="og:image" content="https://matheuszem12.github.io/curriculo/assets/monevas.png">
 <style>
   :root {
     --bg: #f6f7f9;
@@ -17,6 +18,7 @@
     --accent-soft: #e8f0fb;
     --border: #e3e7ee;
     --chip-bg: #eef1f6;
+    --shot-bg: #0b0e14;
     --shadow: 0 1px 3px rgba(16,24,40,.06), 0 8px 24px rgba(16,24,40,.05);
   }
   @media (prefers-color-scheme: dark) {
@@ -29,6 +31,7 @@
       --accent-soft: #1b2a41;
       --border: #242b36;
       --chip-bg: #1e2530;
+      --shot-bg: #0b0e14;
       --shadow: 0 1px 3px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
     }
   }
@@ -41,7 +44,7 @@
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
-  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px 80px; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px 80px; }
 
   header.hero {
     padding: 56px 0 36px;
@@ -104,7 +107,16 @@
   .pdf-row a.primary:hover { filter: brightness(1.1); color: #fff; }
   .pdf-row svg { width: 15px; height: 15px; }
 
-  section { margin-bottom: 40px; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 28px; }
+  @media (max-width: 700px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 14px 16px; box-shadow: var(--shadow);
+  }
+  .stat .num { font-size: 22px; font-weight: 800; color: var(--accent); line-height: 1.2; }
+  .stat .lbl { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  section { margin-bottom: 44px; }
   h2 {
     font-size: 13px;
     text-transform: uppercase;
@@ -116,8 +128,7 @@
     gap: 12px;
   }
   h2::after { content: ""; flex: 1; height: 1px; background: var(--border); }
-  section > p { color: var(--text); margin-bottom: 12px; max-width: 72ch; }
-  section > p:last-child { margin-bottom: 0; }
+  section > p { color: var(--text); margin-bottom: 12px; max-width: 76ch; }
 
   .card {
     background: var(--surface);
@@ -129,17 +140,42 @@
   }
   .card:last-child { margin-bottom: 0; }
   .card-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px 16px; margin-bottom: 4px; }
-  .card-head h3 { font-size: 16.5px; }
+  .card-head h3 { font-size: 17px; }
   .card-head .period { color: var(--muted); font-size: 13px; font-weight: 600; white-space: nowrap; }
   .card .sub { color: var(--accent); font-size: 13.5px; font-weight: 600; margin-bottom: 10px; }
   .card p { color: var(--muted); font-size: 14.5px; margin-bottom: 10px; }
   .card p:last-child { margin-bottom: 0; }
   .card a { color: var(--accent); text-decoration: none; }
   .card a:hover { text-decoration: underline; }
+  .card ul { margin: 4px 0 10px 20px; color: var(--muted); font-size: 14.5px; }
+  .card ul li { margin-bottom: 7px; }
+  .card ul li::marker { color: var(--accent); }
 
-  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .proj-tags span {
+    background: var(--chip-bg); border: 1px solid var(--border);
+    color: var(--muted); padding: 2px 10px; border-radius: 999px;
+    font-size: 11.5px; font-weight: 600;
+  }
+  .repo-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 600; margin-top: 12px;
+  }
+  .repo-link svg { width: 14px; height: 14px; }
+
+  .featured { padding: 0; overflow: hidden; }
+  .featured .shots { display: grid; grid-template-columns: 1fr 1fr; background: var(--shot-bg); }
+  @media (max-width: 700px) { .featured .shots { grid-template-columns: 1fr; } }
+  .featured .shots a { display: block; line-height: 0; transition: opacity .15s ease; }
+  .featured .shots a:hover { opacity: .85; }
+  .featured .shots img { width: 100%; height: 100%; object-fit: cover; }
+  .featured .body { padding: 22px 24px; }
+  .shot-hint { font-size: 11.5px; color: var(--muted); text-align: right; padding: 6px 24px 0; opacity: .7; }
+
+  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
   @media (max-width: 700px) { .projects-grid { grid-template-columns: 1fr; } }
-  .projects-grid .card { margin-bottom: 0; }
+  .projects-grid .card { margin-bottom: 0; display: flex; flex-direction: column; }
+  .projects-grid .proj-tags { margin-top: auto; padding-top: 12px; }
 
   .skills-group { margin-bottom: 18px; }
   .skills-group:last-child { margin-bottom: 0; }
@@ -208,6 +244,28 @@
         <a class="primary" href="CurricullumZem_ES.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Descargar CV (PDF)</a>
       </span>
     </div>
+    <div class="stats">
+      <div class="stat"><div class="num">~30</div><div class="lbl">
+        <span data-lang="pt">serviços em produção (TOTVS)</span>
+        <span data-lang="en">services in production (TOTVS)</span>
+        <span data-lang="es">servicios en producción (TOTVS)</span>
+      </div></div>
+      <div class="stat"><div class="num">9M+</div><div class="lbl">
+        <span data-lang="pt">cotações no histórico do Monevas</span>
+        <span data-lang="en">price records in Monevas history</span>
+        <span data-lang="es">cotizaciones en el histórico de Monevas</span>
+      </div></div>
+      <div class="stat"><div class="num">3</div><div class="lbl">
+        <span data-lang="pt">bancos de dados simultâneos no dia a dia</span>
+        <span data-lang="en">databases used simultaneously daily</span>
+        <span data-lang="es">bases de datos simultáneas en el día a día</span>
+      </div></div>
+      <div class="stat"><div class="num">8+</div><div class="lbl">
+        <span data-lang="pt">produtos próprios criados e mantidos</span>
+        <span data-lang="en">own products built and maintained</span>
+        <span data-lang="es">productos propios creados y mantenidos</span>
+      </div></div>
+    </div>
   </header>
 
   <!-- ==================== PORTUGUÊS ==================== -->
@@ -233,9 +291,15 @@
       <div class="card">
         <div class="card-head"><h3>TOTVS (setor agroindustrial)</h3><span class="period">nov/2024 – atual</span></div>
         <div class="sub">Desenvolvedor Full Stack Pleno (PJ)</div>
-        <p>Desenvolvo e mantenho sistemas de gestão para empresas do agronegócio, integrados ao ERP TOTVS PIMS, cobrindo áreas como custos, fluxo de caixa, compras, fornecedores, pesagem de caminhões e produção industrial. São duas linhas de produto que somam cerca de trinta serviços funcionando em conjunto, construídos em Java (Spring Boot).</p>
-        <p>Grande parte do meu trabalho é fazer sistemas diferentes conversarem. Conecto os produtos ao SAP (contratos, notas fiscais, pesagens e custos), a outros sistemas da TOTVS, a uma plataforma de compras e até a uma balança industrial que envia o peso dos caminhões direto para o sistema. Para isso trabalho com três bancos de dados ao mesmo tempo (PostgreSQL, Oracle e SQL Server), cuidando da organização e do desempenho das consultas.</p>
-        <p>Também modernizo sistemas antigos, reescrevendo-os em versões atuais das tecnologias sem parar a operação, e desenvolvo as telas que os usuários utilizam (Angular). Toda entrega passa por três ambientes (desenvolvimento, testes e produção) com publicação automatizada.</p>
+        <p>Desenvolvimento e manutenção de sistemas de gestão para empresas do agronegócio, integrados ao ERP TOTVS PIMS. Duas linhas de produto que somam cerca de <strong>trinta microsserviços em Java (Spring Boot)</strong> funcionando em conjunto, cobrindo custos, fluxo de caixa, compras, fornecedores, pesagem de caminhões e produção industrial.</p>
+        <ul>
+          <li><strong>Integrações entre sistemas:</strong> conexão dos produtos ao SAP (contratos, notas fiscais, pesagens e custos), a outros sistemas TOTVS, a uma plataforma de compras e a balanças industriais que enviam o peso dos caminhões diretamente para o sistema — via APIs REST e trocas de arquivos, com atenção a idempotência e consistência dos dados entre as pontas.</li>
+          <li><strong>Bancos de dados heterogêneos:</strong> trabalho simultâneo com PostgreSQL, Oracle e SQL Server — modelagem, tuning de consultas pesadas e migrações versionadas, mantendo o desempenho mesmo com dados de ERP legado.</li>
+          <li><strong>Modernização sem parada:</strong> reescrita de sistemas legados em versões atuais de Java/Spring e Angular, migrando por partes, sem interromper a operação das usinas e fazendas que dependem deles.</li>
+          <li><strong>Frontend:</strong> desenvolvimento das telas em Angular usadas diariamente pelos clientes do agronegócio.</li>
+          <li><strong>Esteira de entrega:</strong> toda mudança passa por três ambientes (desenvolvimento, testes e produção) com publicação automatizada (CI/CD).</li>
+        </ul>
+        <div class="proj-tags"><span>Java</span><span>Spring Boot</span><span>Angular</span><span>PostgreSQL</span><span>Oracle</span><span>SQL Server</span><span>SAP</span><span>ERP TOTVS PIMS</span><span>Microsserviços</span><span>CI/CD</span></div>
       </div>
       <div class="card">
         <div class="card-head"><h3>CNH Industrial</h3><span class="period">jun/2022 – jun/2024</span></div>
@@ -252,31 +316,80 @@
     <section>
       <h2>Projetos Pessoais</h2>
       <p>Produtos que criei do zero e mantenho funcionando no ar, cuidando de todas as partes: sistema, banco de dados, servidor e publicação. Uso assistentes de IA como apoio, sempre revisando criticamente o resultado.</p>
-      <div class="projects-grid">
-        <div class="card">
-          <div class="card-head"><h3>Monevas</h3></div>
-          <div class="sub">Finanças pessoais e análise de investimentos · <a href="https://hmg.monevas.com">hmg.monevas.com</a></div>
-          <p>Coleta automaticamente dados da B3 e da CVM, mantém histórico com quase 9 milhões de cotações e avalia ações por cinco métodos diferentes. Login com verificação em duas etapas e criptografia de dados sensíveis. Manter o sistema no ar me ensinou a diagnosticar problemas reais de servidor, como falta de memória e falhas silenciosas.</p>
+
+      <div class="card featured">
+        <div class="shots">
+          <a href="assets/monevas.png" target="_blank" rel="noopener"><img src="assets/monevas.png" alt="Monevas — página inicial" loading="lazy"></a>
+          <a href="assets/monevas-2.png" target="_blank" rel="noopener"><img src="assets/monevas-2.png" alt="Monevas — funcionalidades" loading="lazy"></a>
         </div>
+        <div class="body">
+          <div class="card-head"><h3>Monevas</h3><span class="period"><a href="https://hmg.monevas.com">hmg.monevas.com ↗</a></span></div>
+          <div class="sub">Finanças pessoais e análise de investimentos — no ar, com usuários reais</div>
+          <p>Plataforma que une controle bancário e análise de mercado na mesma tela: lançamento e importação de extratos (CSV, Excel ou PDF), planejamento por categoria com comparação de previsto × realizado, e acompanhamento de ações, FIIs e BDRs.</p>
+          <ul>
+            <li><strong>Dados de mercado:</strong> coleta automática da B3, da CVM e do Yahoo Finance, com histórico de quase 9 milhões de cotações.</li>
+            <li><strong>Análise de ativos:</strong> avaliação por cinco métodos, score fundamentalista com veredito e preço-alvo, gráfico de candles com indicadores e suportes/resistências.</li>
+            <li><strong>Alertas por e-mail:</strong> preço-alvo atingido, variação do dia, calendário de proventos e resumo periódico da watchlist.</li>
+            <li><strong>Segurança:</strong> login com JWT e refresh token em cookie HttpOnly, verificação em duas etapas, criptografia de dados sensíveis, permissões por módulo e limite de requisições.</li>
+            <li><strong>Operação real:</strong> manter o sistema no ar me ensinou a diagnosticar problemas de servidor em produção, como falta de memória e falhas silenciosas de componentes.</li>
+          </ul>
+          <div class="proj-tags"><span>B3 / CVM</span><span>JWT + 2FA</span><span>Criptografia</span><span>Rate limiting</span><span>Auto-hospedado (VPS)</span><span>Monitoramento</span></div>
+        </div>
+      </div>
+      <div class="shot-hint">clique nas imagens para ampliar</div>
+
+      <div class="projects-grid">
         <div class="card">
           <div class="card-head"><h3>Lingua</h3></div>
           <div class="sub">Aprendizado de idiomas com repetição espaçada</div>
-          <p>Mostra cada palavra na hora certa de revisar, para o aluno não esquecer. Funciona no computador e no celular, com áudio por voz sintética e reconhecimento de fala. Método calibrado com simulações: a configuração final retém 81% do vocabulário após uma semana, contra 7% da pior configuração.</p>
+          <p>Aplicativo que mostra cada palavra na hora certa de revisar, para o aluno não esquecer. Funciona no computador e no celular, com áudio por voz sintética e reconhecimento de fala para praticar pronúncia.</p>
+          <p>O método de revisão foi calibrado com simulações e testes rigorosos: a configuração final <strong>retém 81% do vocabulário após uma semana</strong>, contra 7% da pior configuração testada.</p>
+          <div class="proj-tags"><span>Repetição espaçada</span><span>Desktop + mobile</span><span>Voz sintética</span><span>Reconhecimento de fala</span><span>Calibração por simulação</span></div>
         </div>
         <div class="card">
           <div class="card-head"><h3>Monitorame</h3></div>
           <div class="sub">Logística de frotas, remessas, sensores e rotas</div>
-          <p>Calcula o melhor caminho e a melhor ordem de paradas para os veículos e mostra tudo em mapas interativos. Cada alteração no código passa por uma bateria automática de testes, do banco de dados às telas, antes de ser publicada.</p>
+          <p>Sistema de logística para controlar frotas, entregas, sensores e rotas. Calcula o melhor caminho e a melhor ordem de paradas para os veículos (otimização de rotas) e mostra tudo em mapas interativos em tempo real.</p>
+          <p>Cada alteração no código passa por uma <strong>bateria automática de testes de ponta a ponta</strong> — do banco de dados às telas — antes de ser publicada.</p>
+          <div class="proj-tags"><span>Otimização de rotas</span><span>Mapas interativos</span><span>Sensores</span><span>Testes E2E automatizados</span></div>
         </div>
         <div class="card">
           <div class="card-head"><h3>Activity Manager</h3></div>
           <div class="sub">Rastreio de tempo com classificação por IA (Linux)</div>
-          <p>Registra em que o usuário gasta o tempo no computador e classifica as atividades automaticamente com IA. Desenhado para proteger a privacidade: a análise acontece no computador do próprio usuário e o servidor nunca vê o conteúdo das janelas.</p>
+          <p>Programa que registra em que o usuário gasta o tempo no computador e classifica as atividades automaticamente com IA.</p>
+          <p>Desenhado com <strong>privacidade em primeiro lugar:</strong> a análise acontece na máquina do próprio usuário e o servidor nunca vê o conteúdo das janelas.</p>
+          <a class="repo-link" href="https://github.com/MatheusZem12/activity-manager"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Ver no GitHub</a>
+          <div class="proj-tags"><span>Linux</span><span>IA local</span><span>Privacidade por design</span></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>Mail Reader</h3></div>
+          <div class="sub">Leitor de e-mails local para desktop (Gmail e Outlook)</div>
+          <p>Cliente de e-mail em <strong>Electron + Node.js</strong>, sem backend remoto: a conexão com Gmail e Outlook acontece direto na máquina do usuário via OAuth, e credenciais, tokens e cache ficam salvos localmente e criptografados.</p>
+          <p>Caixa de entrada unificada de várias contas, painel de leitura, busca, seleção múltipla e um automatizador de regras para limpeza de e-mails em massa.</p>
+          <a class="repo-link" href="https://github.com/MatheusZem12/mail-reader"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Ver no GitHub</a>
+          <div class="proj-tags"><span>Electron</span><span>Node.js</span><span>OAuth (Google/Microsoft)</span><span>Criptografia local</span></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>Git Manager</h3></div>
+          <div class="sub">Gerenciador visual de repositórios Git</div>
+          <p>App desktop em <strong>Electron + Node.js</strong> para organizar dezenas de repositórios em grupos e subgrupos com arrastar-e-soltar, mostrando status, busca e estatísticas de cada um.</p>
+          <p>Por projeto: commit com stage/unstage e diff colorido, histórico em gráfico de branches, tags, stash e sincronização — tudo conversando com o Git do sistema.</p>
+          <a class="repo-link" href="https://github.com/MatheusZem12/git-manager"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Ver no GitHub</a>
+          <div class="proj-tags"><span>Electron</span><span>Node.js</span><span>IPC</span><span>Git</span></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>Terminal Animado</h3></div>
+          <div class="sub">Extensão publicada na loja oficial do VS Code</div>
+          <p>Fundos animados para o painel do VS Code — neve, chuva com relâmpagos e brasas — com controle de opacidade e velocidade, sem pesar no editor.</p>
+          <p>Com um efeito ativo, a extensão tinge a interface em tons discretos combinando com o tema, usando a API oficial de cores do VS Code e restaurando os valores originais ao remover.</p>
+          <a class="repo-link" href="https://github.com/MatheusZem12/terminal-animado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Ver no GitHub</a>
+          <div class="proj-tags"><span>Extensão VS Code</span><span>JavaScript</span><span>Canvas / animação</span></div>
         </div>
       </div>
+
       <div class="card" style="margin-top:14px">
         <div class="card-head"><h3>Outros projetos</h3></div>
-        <p>Portal acadêmico com painéis para aluno, professor e instituição (23 telas); leitor de e-mails para computador (Gmail e Outlook); localizador familiar em mapa, hospedado por mim; extensão publicada na loja oficial do VS Code; e análise de dados públicos de saúde (DATASUS).</p>
+        <p>Portal acadêmico com painéis para aluno, professor e instituição (23 telas); localizador familiar em mapa, hospedado por mim; e análise de dados públicos de saúde (DATASUS).</p>
       </div>
     </section>
 
@@ -285,19 +398,19 @@
       <div class="skills-group">
         <h3>Backend</h3>
         <div class="chips">
-          <span class="chip hl">Java (avançado)</span><span class="chip hl">Spring Boot 2/3</span><span class="chip">Spring Cloud</span><span class="chip">Spring Security (JWT, OAuth2)</span><span class="chip">Python (FastAPI, Django REST)</span><span class="chip">Node.js</span><span class="chip">Go</span><span class="chip">Dart</span><span class="chip">Microsserviços</span><span class="chip">RabbitMQ</span><span class="chip">APIs REST</span><span class="chip">JPA/Hibernate</span>
+          <span class="chip hl">Java (avançado)</span><span class="chip hl">Spring Boot 2/3</span><span class="chip">Spring Cloud (Gateway, Eureka, OpenFeign)</span><span class="chip">Spring Security (JWT, OAuth2)</span><span class="chip">Python (FastAPI, Django REST)</span><span class="chip">Node.js (Express, WebSockets)</span><span class="chip">Go</span><span class="chip">Dart</span><span class="chip">Microsserviços</span><span class="chip">Monólitos modulares</span><span class="chip">RabbitMQ</span><span class="chip">APIs REST</span><span class="chip">JPA/Hibernate</span>
         </div>
       </div>
       <div class="skills-group">
         <h3>Frontend e dados</h3>
         <div class="chips">
-          <span class="chip hl">Angular 17–22</span><span class="chip">PrimeNG</span><span class="chip">TailwindCSS</span><span class="chip">RxJS · SSR</span><span class="chip">Vue 3</span><span class="chip">Electron</span><span class="chip">Flutter</span><span class="chip hl">PostgreSQL (PostGIS)</span><span class="chip">Oracle</span><span class="chip">SQL Server</span><span class="chip">DuckDB</span><span class="chip">Flyway</span>
+          <span class="chip hl">Angular 17–22</span><span class="chip">PrimeNG</span><span class="chip">TailwindCSS</span><span class="chip">RxJS · SSR</span><span class="chip">Vue 3</span><span class="chip">Electron</span><span class="chip">Flutter · Capacitor</span><span class="chip hl">PostgreSQL (PostGIS)</span><span class="chip">Oracle</span><span class="chip">SQL Server</span><span class="chip">DuckDB</span><span class="chip">Flyway</span>
         </div>
       </div>
       <div class="skills-group">
         <h3>Infraestrutura, qualidade e IA</h3>
         <div class="chips">
-          <span class="chip">Docker/Compose</span><span class="chip">GitHub Actions</span><span class="chip">Linux/VPS</span><span class="chip">Nginx</span><span class="chip">Cloudflare Tunnel</span><span class="chip">Prometheus</span><span class="chip">JUnit</span><span class="chip">Testcontainers</span><span class="chip">Playwright</span><span class="chip">Vitest</span><span class="chip hl">Integração de LLMs</span><span class="chip">RPA (Selenium)</span>
+          <span class="chip">Docker/Compose</span><span class="chip">GitHub Actions</span><span class="chip">Linux/VPS</span><span class="chip">Nginx</span><span class="chip">Cloudflare Tunnel</span><span class="chip">Prometheus</span><span class="chip">JUnit</span><span class="chip">Testcontainers</span><span class="chip">Playwright</span><span class="chip">Vitest</span><span class="chip hl">Integração de LLMs (Anthropic, OpenAI, Gemini)</span><span class="chip">RPA (Selenium)</span>
         </div>
       </div>
     </section>
@@ -341,9 +454,15 @@
       <div class="card">
         <div class="card-head"><h3>TOTVS (agribusiness sector)</h3><span class="period">Nov 2024 – present</span></div>
         <div class="sub">Mid-level Full Stack Developer (contractor)</div>
-        <p>I develop and maintain management systems for agribusiness companies, integrated with the TOTVS PIMS ERP, covering areas such as costs, cash flow, purchasing, suppliers, truck weighing and industrial production. The two product lines add up to about thirty services working together, built in Java (Spring Boot).</p>
-        <p>A large part of my work is making different systems talk to each other. I connect the products to SAP (contracts, invoices, weighings and costs), to other TOTVS systems, to a procurement platform and even to an industrial scale that sends truck weights straight into the system. For that I work with three databases at the same time (PostgreSQL, Oracle and SQL Server), taking care of data organization and query performance.</p>
-        <p>I also modernize older systems, rewriting them in current versions of the technologies without stopping the operation, and build the screens users work with (Angular). Every delivery goes through three environments (development, testing and production) with automated releases.</p>
+        <p>Development and maintenance of management systems for agribusiness companies, integrated with the TOTVS PIMS ERP. Two product lines adding up to about <strong>thirty Java (Spring Boot) microservices</strong> working together, covering costs, cash flow, purchasing, suppliers, truck weighing and industrial production.</p>
+        <ul>
+          <li><strong>System integrations:</strong> connecting the products to SAP (contracts, invoices, weighings and costs), to other TOTVS systems, to a procurement platform and to industrial scales that send truck weights straight into the system — via REST APIs and file exchanges, with attention to idempotency and data consistency between endpoints.</li>
+          <li><strong>Heterogeneous databases:</strong> working simultaneously with PostgreSQL, Oracle and SQL Server — data modeling, tuning of heavy queries and versioned migrations, keeping performance even with legacy ERP data.</li>
+          <li><strong>Zero-downtime modernization:</strong> rewriting legacy systems in current versions of Java/Spring and Angular, migrating piece by piece, without interrupting the operation of the mills and farms that depend on them.</li>
+          <li><strong>Frontend:</strong> building the Angular screens used daily by agribusiness customers.</li>
+          <li><strong>Delivery pipeline:</strong> every change goes through three environments (development, testing and production) with automated releases (CI/CD).</li>
+        </ul>
+        <div class="proj-tags"><span>Java</span><span>Spring Boot</span><span>Angular</span><span>PostgreSQL</span><span>Oracle</span><span>SQL Server</span><span>SAP</span><span>TOTVS PIMS ERP</span><span>Microservices</span><span>CI/CD</span></div>
       </div>
       <div class="card">
         <div class="card-head"><h3>CNH Industrial</h3><span class="period">Jun 2022 – Jun 2024</span></div>
@@ -360,31 +479,80 @@
     <section>
       <h2>Personal Projects</h2>
       <p>Products I created from scratch and keep running live, taking care of every part: system, database, server and releases. I use AI assistants as support, always critically reviewing the result.</p>
-      <div class="projects-grid">
-        <div class="card">
-          <div class="card-head"><h3>Monevas</h3></div>
-          <div class="sub">Personal finance and investment analysis · <a href="https://hmg.monevas.com">hmg.monevas.com</a></div>
-          <p>Automatically collects data from the stock exchange and official bodies (B3 and CVM), keeps a history of nearly 9 million price records and evaluates stocks through five different methods. Two-step login verification and encryption of sensitive data. Keeping it live taught me to diagnose real server problems, such as memory exhaustion and silent component failures.</p>
+
+      <div class="card featured">
+        <div class="shots">
+          <a href="assets/monevas.png" target="_blank" rel="noopener"><img src="assets/monevas.png" alt="Monevas — landing page" loading="lazy"></a>
+          <a href="assets/monevas-2.png" target="_blank" rel="noopener"><img src="assets/monevas-2.png" alt="Monevas — features" loading="lazy"></a>
         </div>
+        <div class="body">
+          <div class="card-head"><h3>Monevas</h3><span class="period"><a href="https://hmg.monevas.com">hmg.monevas.com ↗</a></span></div>
+          <div class="sub">Personal finance and investment analysis — live, with real users</div>
+          <p>A platform that puts bank tracking and market analysis on the same screen: manual entry and statement import (CSV, Excel or PDF), category-based planning with planned × actual comparison, and tracking of stocks, REITs (FIIs) and BDRs.</p>
+          <ul>
+            <li><strong>Market data:</strong> automatic collection from B3, CVM and Yahoo Finance, with a history of nearly 9 million price records.</li>
+            <li><strong>Asset analysis:</strong> evaluation through five methods, a fundamentalist score with verdict and target price, candlestick charts with indicators and support/resistance levels.</li>
+            <li><strong>E-mail alerts:</strong> target price reached, daily variation, dividend calendar and periodic watchlist summaries.</li>
+            <li><strong>Security:</strong> JWT login with refresh token in an HttpOnly cookie, two-step verification, encryption of sensitive data, per-module permissions and request rate limiting.</li>
+            <li><strong>Real operations:</strong> keeping the system live taught me to diagnose production server problems, such as memory exhaustion and silent component failures.</li>
+          </ul>
+          <div class="proj-tags"><span>B3 / CVM</span><span>JWT + 2FA</span><span>Encryption</span><span>Rate limiting</span><span>Self-hosted (VPS)</span><span>Monitoring</span></div>
+        </div>
+      </div>
+      <div class="shot-hint">click the images to enlarge</div>
+
+      <div class="projects-grid">
         <div class="card">
           <div class="card-head"><h3>Lingua</h3></div>
           <div class="sub">Language learning with spaced repetition</div>
-          <p>Shows each word at the right moment to review, so the learner does not forget. Works on desktop and mobile, with synthesized voice audio and speech recognition. Review method calibrated with simulations: the final configuration retains 81% of vocabulary after one week, versus 7% for the worst configuration.</p>
+          <p>An app that shows each word at the right moment to review, so the learner does not forget. Works on desktop and mobile, with synthesized voice audio and speech recognition for pronunciation practice.</p>
+          <p>The review method was calibrated with simulations and rigorous testing: the final configuration <strong>retains 81% of vocabulary after one week</strong>, versus 7% for the worst configuration tested.</p>
+          <div class="proj-tags"><span>Spaced repetition</span><span>Desktop + mobile</span><span>Text-to-speech</span><span>Speech recognition</span><span>Simulation-calibrated</span></div>
         </div>
         <div class="card">
           <div class="card-head"><h3>Monitorame</h3></div>
           <div class="sub">Logistics for fleets, shipments, sensors and routes</div>
-          <p>Calculates the best path and stop order for vehicles and shows everything on interactive maps. Every code change goes through an automatic battery of tests, from the database to the screens, before being released.</p>
+          <p>A logistics system to manage fleets, deliveries, sensors and routes. It calculates the best path and stop order for vehicles (route optimization) and shows everything on interactive real-time maps.</p>
+          <p>Every code change goes through an <strong>automatic end-to-end test battery</strong> — from the database to the screens — before being released.</p>
+          <div class="proj-tags"><span>Route optimization</span><span>Interactive maps</span><span>Sensors</span><span>Automated E2E tests</span></div>
         </div>
         <div class="card">
           <div class="card-head"><h3>Activity Manager</h3></div>
           <div class="sub">Time tracking with AI classification (Linux)</div>
-          <p>Records how the user spends time on the computer and classifies activities automatically with AI. Designed to protect privacy: the analysis happens on the user's own computer and the server never sees window contents.</p>
+          <p>A program that records how the user spends time on the computer and classifies activities automatically with AI.</p>
+          <p>Designed <strong>privacy-first:</strong> the analysis happens on the user's own machine and the server never sees window contents.</p>
+          <a class="repo-link" href="https://github.com/MatheusZem12/activity-manager"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>View on GitHub</a>
+          <div class="proj-tags"><span>Linux</span><span>Local AI</span><span>Privacy by design</span></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>Mail Reader</h3></div>
+          <div class="sub">Local desktop e-mail reader (Gmail and Outlook)</div>
+          <p>An e-mail client built with <strong>Electron + Node.js</strong>, with no remote backend: the connection to Gmail and Outlook happens directly on the user's machine via OAuth, and credentials, tokens and cache are stored locally and encrypted.</p>
+          <p>A unified inbox for multiple accounts, reading pane, search, multi-select and a rule automator for bulk e-mail cleanup.</p>
+          <a class="repo-link" href="https://github.com/MatheusZem12/mail-reader"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>View on GitHub</a>
+          <div class="proj-tags"><span>Electron</span><span>Node.js</span><span>OAuth (Google/Microsoft)</span><span>Local encryption</span></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>Git Manager</h3></div>
+          <div class="sub">Visual Git repository manager</div>
+          <p>A desktop app built with <strong>Electron + Node.js</strong> to organize dozens of repositories into groups and subgroups with drag-and-drop, showing status, search and statistics for each one.</p>
+          <p>Per project: commits with stage/unstage and colored diff, branch-graph history, tags, stash and sync — all talking to the system's own Git.</p>
+          <a class="repo-link" href="https://github.com/MatheusZem12/git-manager"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>View on GitHub</a>
+          <div class="proj-tags"><span>Electron</span><span>Node.js</span><span>IPC</span><span>Git</span></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>Terminal Animado</h3></div>
+          <div class="sub">Extension published on the official VS Code marketplace</div>
+          <p>Animated backgrounds for the VS Code panel — snow, rain with lightning, and embers — with opacity and speed controls, without weighing down the editor.</p>
+          <p>With an effect active, the extension tints the interface in subtle matching tones using VS Code's official color API, restoring the original values on removal.</p>
+          <a class="repo-link" href="https://github.com/MatheusZem12/terminal-animado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>View on GitHub</a>
+          <div class="proj-tags"><span>VS Code extension</span><span>JavaScript</span><span>Canvas / animation</span></div>
         </div>
       </div>
+
       <div class="card" style="margin-top:14px">
         <div class="card-head"><h3>Other projects</h3></div>
-        <p>An academic portal with dashboards for students, teachers and institutions (23 screens); a desktop e-mail reader (Gmail and Outlook); a self-hosted family locator on a map; an extension published on the official VS Code marketplace; and analysis of public health data (DATASUS).</p>
+        <p>An academic portal with dashboards for students, teachers and institutions (23 screens); a self-hosted family locator on a map; and analysis of public health data (DATASUS).</p>
       </div>
     </section>
 
@@ -393,19 +561,19 @@
       <div class="skills-group">
         <h3>Backend</h3>
         <div class="chips">
-          <span class="chip hl">Java (advanced)</span><span class="chip hl">Spring Boot 2/3</span><span class="chip">Spring Cloud</span><span class="chip">Spring Security (JWT, OAuth2)</span><span class="chip">Python (FastAPI, Django REST)</span><span class="chip">Node.js</span><span class="chip">Go</span><span class="chip">Dart</span><span class="chip">Microservices</span><span class="chip">RabbitMQ</span><span class="chip">REST APIs</span><span class="chip">JPA/Hibernate</span>
+          <span class="chip hl">Java (advanced)</span><span class="chip hl">Spring Boot 2/3</span><span class="chip">Spring Cloud (Gateway, Eureka, OpenFeign)</span><span class="chip">Spring Security (JWT, OAuth2)</span><span class="chip">Python (FastAPI, Django REST)</span><span class="chip">Node.js (Express, WebSockets)</span><span class="chip">Go</span><span class="chip">Dart</span><span class="chip">Microservices</span><span class="chip">Modular monoliths</span><span class="chip">RabbitMQ</span><span class="chip">REST APIs</span><span class="chip">JPA/Hibernate</span>
         </div>
       </div>
       <div class="skills-group">
         <h3>Frontend & data</h3>
         <div class="chips">
-          <span class="chip hl">Angular 17–22</span><span class="chip">PrimeNG</span><span class="chip">TailwindCSS</span><span class="chip">RxJS · SSR</span><span class="chip">Vue 3</span><span class="chip">Electron</span><span class="chip">Flutter</span><span class="chip hl">PostgreSQL (PostGIS)</span><span class="chip">Oracle</span><span class="chip">SQL Server</span><span class="chip">DuckDB</span><span class="chip">Flyway</span>
+          <span class="chip hl">Angular 17–22</span><span class="chip">PrimeNG</span><span class="chip">TailwindCSS</span><span class="chip">RxJS · SSR</span><span class="chip">Vue 3</span><span class="chip">Electron</span><span class="chip">Flutter · Capacitor</span><span class="chip hl">PostgreSQL (PostGIS)</span><span class="chip">Oracle</span><span class="chip">SQL Server</span><span class="chip">DuckDB</span><span class="chip">Flyway</span>
         </div>
       </div>
       <div class="skills-group">
         <h3>Infrastructure, quality & AI</h3>
         <div class="chips">
-          <span class="chip">Docker/Compose</span><span class="chip">GitHub Actions</span><span class="chip">Linux/VPS</span><span class="chip">Nginx</span><span class="chip">Cloudflare Tunnel</span><span class="chip">Prometheus</span><span class="chip">JUnit</span><span class="chip">Testcontainers</span><span class="chip">Playwright</span><span class="chip">Vitest</span><span class="chip hl">LLM integration</span><span class="chip">RPA (Selenium)</span>
+          <span class="chip">Docker/Compose</span><span class="chip">GitHub Actions</span><span class="chip">Linux/VPS</span><span class="chip">Nginx</span><span class="chip">Cloudflare Tunnel</span><span class="chip">Prometheus</span><span class="chip">JUnit</span><span class="chip">Testcontainers</span><span class="chip">Playwright</span><span class="chip">Vitest</span><span class="chip hl">LLM integration (Anthropic, OpenAI, Gemini)</span><span class="chip">RPA (Selenium)</span>
         </div>
       </div>
     </section>
@@ -449,9 +617,15 @@
       <div class="card">
         <div class="card-head"><h3>TOTVS (sector agroindustrial)</h3><span class="period">nov 2024 – actualidad</span></div>
         <div class="sub">Desarrollador Full Stack Semi Senior (contratista)</div>
-        <p>Desarrollo y mantengo sistemas de gestión para empresas del agronegocio, integrados al ERP TOTVS PIMS, cubriendo áreas como costos, flujo de caja, compras, proveedores, pesaje de camiones y producción industrial. Son dos líneas de producto que suman cerca de treinta servicios funcionando en conjunto, construidos en Java (Spring Boot).</p>
-        <p>Gran parte de mi trabajo es hacer que sistemas distintos conversen. Conecto los productos al SAP (contratos, facturas, pesajes y costos), a otros sistemas de TOTVS, a una plataforma de compras y hasta a una báscula industrial que envía el peso de los camiones directo al sistema. Para eso trabajo con tres bases de datos a la vez (PostgreSQL, Oracle y SQL Server), cuidando la organización y el desempeño de las consultas.</p>
-        <p>También modernizo sistemas antiguos, reescribiéndolos en versiones actuales de las tecnologías sin detener la operación, y desarrollo las pantallas que usan los usuarios (Angular). Cada entrega pasa por tres ambientes (desarrollo, pruebas y producción) con publicación automatizada.</p>
+        <p>Desarrollo y mantenimiento de sistemas de gestión para empresas del agronegocio, integrados al ERP TOTVS PIMS. Dos líneas de producto que suman cerca de <strong>treinta microservicios en Java (Spring Boot)</strong> funcionando en conjunto, cubriendo costos, flujo de caja, compras, proveedores, pesaje de camiones y producción industrial.</p>
+        <ul>
+          <li><strong>Integraciones entre sistemas:</strong> conexión de los productos al SAP (contratos, facturas, pesajes y costos), a otros sistemas TOTVS, a una plataforma de compras y a básculas industriales que envían el peso de los camiones directo al sistema — vía APIs REST e intercambio de archivos, cuidando idempotencia y consistencia de datos entre las puntas.</li>
+          <li><strong>Bases de datos heterogéneas:</strong> trabajo simultáneo con PostgreSQL, Oracle y SQL Server — modelado, tuning de consultas pesadas y migraciones versionadas, manteniendo el desempeño incluso con datos de ERP legado.</li>
+          <li><strong>Modernización sin paradas:</strong> reescritura de sistemas legados en versiones actuales de Java/Spring y Angular, migrando por partes, sin interrumpir la operación de los ingenios y haciendas que dependen de ellos.</li>
+          <li><strong>Frontend:</strong> desarrollo de las pantallas en Angular usadas a diario por los clientes del agronegocio.</li>
+          <li><strong>Pipeline de entrega:</strong> cada cambio pasa por tres ambientes (desarrollo, pruebas y producción) con publicación automatizada (CI/CD).</li>
+        </ul>
+        <div class="proj-tags"><span>Java</span><span>Spring Boot</span><span>Angular</span><span>PostgreSQL</span><span>Oracle</span><span>SQL Server</span><span>SAP</span><span>ERP TOTVS PIMS</span><span>Microservicios</span><span>CI/CD</span></div>
       </div>
       <div class="card">
         <div class="card-head"><h3>CNH Industrial</h3><span class="period">jun 2022 – jun 2024</span></div>
@@ -468,31 +642,80 @@
     <section>
       <h2>Proyectos Personales</h2>
       <p>Productos que creé desde cero y mantengo funcionando en el aire, cuidando todas las partes: sistema, base de datos, servidor y publicación. Uso asistentes de IA como apoyo, revisando críticamente el resultado.</p>
-      <div class="projects-grid">
-        <div class="card">
-          <div class="card-head"><h3>Monevas</h3></div>
-          <div class="sub">Finanzas personales y análisis de inversiones · <a href="https://hmg.monevas.com">hmg.monevas.com</a></div>
-          <p>Recolecta automáticamente datos de la bolsa y de órganos oficiales (B3 y CVM), mantiene un histórico de casi 9 millones de cotizaciones y evalúa acciones por cinco métodos distintos. Login con verificación en dos pasos y cifrado de datos sensibles. Mantenerla en el aire me enseñó a diagnosticar problemas reales de servidor, como falta de memoria y fallas silenciosas.</p>
+
+      <div class="card featured">
+        <div class="shots">
+          <a href="assets/monevas.png" target="_blank" rel="noopener"><img src="assets/monevas.png" alt="Monevas — página inicial" loading="lazy"></a>
+          <a href="assets/monevas-2.png" target="_blank" rel="noopener"><img src="assets/monevas-2.png" alt="Monevas — funcionalidades" loading="lazy"></a>
         </div>
+        <div class="body">
+          <div class="card-head"><h3>Monevas</h3><span class="period"><a href="https://hmg.monevas.com">hmg.monevas.com ↗</a></span></div>
+          <div class="sub">Finanzas personales y análisis de inversiones — en el aire, con usuarios reales</div>
+          <p>Plataforma que une control bancario y análisis de mercado en la misma pantalla: registro e importación de extractos (CSV, Excel o PDF), planificación por categoría con comparación de previsto × realizado, y seguimiento de acciones, FIIs y BDRs.</p>
+          <ul>
+            <li><strong>Datos de mercado:</strong> recolección automática de B3, CVM y Yahoo Finance, con un histórico de casi 9 millones de cotizaciones.</li>
+            <li><strong>Análisis de activos:</strong> evaluación por cinco métodos, score fundamentalista con veredicto y precio objetivo, gráfico de velas con indicadores y soportes/resistencias.</li>
+            <li><strong>Alertas por correo:</strong> precio objetivo alcanzado, variación del día, calendario de dividendos y resumen periódico de la watchlist.</li>
+            <li><strong>Seguridad:</strong> login con JWT y refresh token en cookie HttpOnly, verificación en dos pasos, cifrado de datos sensibles, permisos por módulo y límite de solicitudes.</li>
+            <li><strong>Operación real:</strong> mantener el sistema en el aire me enseñó a diagnosticar problemas de servidor en producción, como falta de memoria y fallas silenciosas de componentes.</li>
+          </ul>
+          <div class="proj-tags"><span>B3 / CVM</span><span>JWT + 2FA</span><span>Cifrado</span><span>Rate limiting</span><span>Auto-alojado (VPS)</span><span>Monitoreo</span></div>
+        </div>
+      </div>
+      <div class="shot-hint">haz clic en las imágenes para ampliar</div>
+
+      <div class="projects-grid">
         <div class="card">
           <div class="card-head"><h3>Lingua</h3></div>
           <div class="sub">Aprendizaje de idiomas con repetición espaciada</div>
-          <p>Muestra cada palabra en el momento justo de repasar, para que el alumno no olvide. Funciona en computadora y celular, con audio de voz sintética y reconocimiento de habla. Método calibrado con simulaciones: la configuración final retiene el 81% del vocabulario tras una semana, contra el 7% de la peor configuración.</p>
+          <p>Aplicación que muestra cada palabra en el momento justo de repasar, para que el alumno no olvide. Funciona en computadora y celular, con audio de voz sintética y reconocimiento de habla para practicar pronunciación.</p>
+          <p>El método fue calibrado con simulaciones y pruebas rigurosas: la configuración final <strong>retiene el 81% del vocabulario tras una semana</strong>, contra el 7% de la peor configuración probada.</p>
+          <div class="proj-tags"><span>Repetición espaciada</span><span>Desktop + móvil</span><span>Voz sintética</span><span>Reconocimiento de habla</span><span>Calibrado por simulación</span></div>
         </div>
         <div class="card">
           <div class="card-head"><h3>Monitorame</h3></div>
           <div class="sub">Logística de flotas, envíos, sensores y rutas</div>
-          <p>Calcula el mejor camino y el mejor orden de paradas para los vehículos y muestra todo en mapas interactivos. Cada cambio en el código pasa por una batería automática de pruebas, de la base de datos a las pantallas, antes de publicarse.</p>
+          <p>Sistema de logística para controlar flotas, entregas, sensores y rutas. Calcula el mejor camino y el mejor orden de paradas para los vehículos (optimización de rutas) y muestra todo en mapas interactivos en tiempo real.</p>
+          <p>Cada cambio en el código pasa por una <strong>batería automática de pruebas de punta a punta</strong> — de la base de datos a las pantallas — antes de publicarse.</p>
+          <div class="proj-tags"><span>Optimización de rutas</span><span>Mapas interactivos</span><span>Sensores</span><span>Pruebas E2E automatizadas</span></div>
         </div>
         <div class="card">
           <div class="card-head"><h3>Activity Manager</h3></div>
           <div class="sub">Registro de tiempo con clasificación por IA (Linux)</div>
-          <p>Registra en qué gasta el tiempo el usuario en la computadora y clasifica las actividades automáticamente con IA. Diseñado para proteger la privacidad: el análisis ocurre en la computadora del propio usuario y el servidor nunca ve el contenido de las ventanas.</p>
+          <p>Programa que registra en qué gasta el tiempo el usuario en la computadora y clasifica las actividades automáticamente con IA.</p>
+          <p>Diseñado con <strong>privacidad primero:</strong> el análisis ocurre en la máquina del propio usuario y el servidor nunca ve el contenido de las ventanas.</p>
+          <a class="repo-link" href="https://github.com/MatheusZem12/activity-manager"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Ver en GitHub</a>
+          <div class="proj-tags"><span>Linux</span><span>IA local</span><span>Privacidad por diseño</span></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>Mail Reader</h3></div>
+          <div class="sub">Lector de correo local para desktop (Gmail y Outlook)</div>
+          <p>Cliente de correo en <strong>Electron + Node.js</strong>, sin backend remoto: la conexión con Gmail y Outlook ocurre directo en la máquina del usuario vía OAuth, y credenciales, tokens y caché quedan guardados localmente y cifrados.</p>
+          <p>Bandeja unificada de varias cuentas, panel de lectura, búsqueda, selección múltiple y un automatizador de reglas para limpieza masiva de correos.</p>
+          <a class="repo-link" href="https://github.com/MatheusZem12/mail-reader"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Ver en GitHub</a>
+          <div class="proj-tags"><span>Electron</span><span>Node.js</span><span>OAuth (Google/Microsoft)</span><span>Cifrado local</span></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>Git Manager</h3></div>
+          <div class="sub">Gestor visual de repositorios Git</div>
+          <p>App de escritorio en <strong>Electron + Node.js</strong> para organizar decenas de repositorios en grupos y subgrupos con arrastrar y soltar, mostrando estado, búsqueda y estadísticas de cada uno.</p>
+          <p>Por proyecto: commits con stage/unstage y diff coloreado, historial en gráfico de ramas, tags, stash y sincronización — todo conversando con el Git del sistema.</p>
+          <a class="repo-link" href="https://github.com/MatheusZem12/git-manager"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Ver en GitHub</a>
+          <div class="proj-tags"><span>Electron</span><span>Node.js</span><span>IPC</span><span>Git</span></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>Terminal Animado</h3></div>
+          <div class="sub">Extensión publicada en la tienda oficial de VS Code</div>
+          <p>Fondos animados para el panel de VS Code — nieve, lluvia con relámpagos y brasas — con control de opacidad y velocidad, sin sobrecargar el editor.</p>
+          <p>Con un efecto activo, la extensión tiñe la interfaz en tonos discretos combinando con el tema, usando la API oficial de colores de VS Code y restaurando los valores originales al quitar.</p>
+          <a class="repo-link" href="https://github.com/MatheusZem12/terminal-animado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>Ver en GitHub</a>
+          <div class="proj-tags"><span>Extensión VS Code</span><span>JavaScript</span><span>Canvas / animación</span></div>
         </div>
       </div>
+
       <div class="card" style="margin-top:14px">
         <div class="card-head"><h3>Otros proyectos</h3></div>
-        <p>Portal académico con paneles para alumno, profesor e institución (23 pantallas); lector de correo para computadora (Gmail y Outlook); localizador familiar en mapa, alojado por mí; extensión publicada en la tienda oficial de VS Code; y análisis de datos públicos de salud (DATASUS).</p>
+        <p>Portal académico con paneles para alumno, profesor e institución (23 pantallas); localizador familiar en mapa, alojado por mí; y análisis de datos públicos de salud (DATASUS).</p>
       </div>
     </section>
 
@@ -501,19 +724,19 @@
       <div class="skills-group">
         <h3>Backend</h3>
         <div class="chips">
-          <span class="chip hl">Java (avanzado)</span><span class="chip hl">Spring Boot 2/3</span><span class="chip">Spring Cloud</span><span class="chip">Spring Security (JWT, OAuth2)</span><span class="chip">Python (FastAPI, Django REST)</span><span class="chip">Node.js</span><span class="chip">Go</span><span class="chip">Dart</span><span class="chip">Microservicios</span><span class="chip">RabbitMQ</span><span class="chip">APIs REST</span><span class="chip">JPA/Hibernate</span>
+          <span class="chip hl">Java (avanzado)</span><span class="chip hl">Spring Boot 2/3</span><span class="chip">Spring Cloud (Gateway, Eureka, OpenFeign)</span><span class="chip">Spring Security (JWT, OAuth2)</span><span class="chip">Python (FastAPI, Django REST)</span><span class="chip">Node.js</span><span class="chip">Go</span><span class="chip">Dart</span><span class="chip">Microservicios</span><span class="chip">Monolitos modulares</span><span class="chip">RabbitMQ</span><span class="chip">APIs REST</span><span class="chip">JPA/Hibernate</span>
         </div>
       </div>
       <div class="skills-group">
         <h3>Frontend y datos</h3>
         <div class="chips">
-          <span class="chip hl">Angular 17–22</span><span class="chip">PrimeNG</span><span class="chip">TailwindCSS</span><span class="chip">RxJS · SSR</span><span class="chip">Vue 3</span><span class="chip">Electron</span><span class="chip">Flutter</span><span class="chip hl">PostgreSQL (PostGIS)</span><span class="chip">Oracle</span><span class="chip">SQL Server</span><span class="chip">DuckDB</span><span class="chip">Flyway</span>
+          <span class="chip hl">Angular 17–22</span><span class="chip">PrimeNG</span><span class="chip">TailwindCSS</span><span class="chip">RxJS · SSR</span><span class="chip">Vue 3</span><span class="chip">Electron</span><span class="chip">Flutter · Capacitor</span><span class="chip hl">PostgreSQL (PostGIS)</span><span class="chip">Oracle</span><span class="chip">SQL Server</span><span class="chip">DuckDB</span><span class="chip">Flyway</span>
         </div>
       </div>
       <div class="skills-group">
         <h3>Infraestructura, calidad e IA</h3>
         <div class="chips">
-          <span class="chip">Docker/Compose</span><span class="chip">GitHub Actions</span><span class="chip">Linux/VPS</span><span class="chip">Nginx</span><span class="chip">Cloudflare Tunnel</span><span class="chip">Prometheus</span><span class="chip">JUnit</span><span class="chip">Testcontainers</span><span class="chip">Playwright</span><span class="chip">Vitest</span><span class="chip hl">Integración de LLMs</span><span class="chip">RPA (Selenium)</span>
+          <span class="chip">Docker/Compose</span><span class="chip">GitHub Actions</span><span class="chip">Linux/VPS</span><span class="chip">Nginx</span><span class="chip">Cloudflare Tunnel</span><span class="chip">Prometheus</span><span class="chip">JUnit</span><span class="chip">Testcontainers</span><span class="chip">Playwright</span><span class="chip">Vitest</span><span class="chip hl">Integración de LLMs (Anthropic, OpenAI, Gemini)</span><span class="chip">RPA (Selenium)</span>
         </div>
       </div>
     </section>
